@@ -6,12 +6,12 @@ const MealItem = ({ meal }) => {
 
   return (
     <li className={classes.meal}>
-      <div className={classes.mealItem}>
+      <div>
         <h3>{meal.name}</h3>
-        <span className={classes.description}>{meal.description}</span>
-        <span className={classes.price}>{price}</span>
+        <div className={classes.description}>{meal.description}</div>
+        <div className={classes.price}>{price}</div>
       </div>
-      <div>MealItem2</div>
+      <div></div>
     </li>
   );
 };
