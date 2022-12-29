@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import Card from '../../UI/Card/Card';
 import classes from './AvailableMeals.module.css';
 
 const DUMMY_MEALS = [
@@ -35,7 +36,9 @@ const AvailableMeals = () => {
 
   return (
     <section className={classes.meals}>
-      <ul>{mealList}</ul>
+      <Card>
+        <ul>{mealList}</ul>
+      </Card>
     </section>
   );
 };
