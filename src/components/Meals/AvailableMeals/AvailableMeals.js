@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import Card from '../../UI/Card/Card';
+import MealItem from '../MealItem/MealItem';
 import classes from './AvailableMeals.module.css';
 
 const DUMMY_MEALS = [
@@ -31,7 +32,7 @@ const DUMMY_MEALS = [
 
 const AvailableMeals = () => {
   const mealList = DUMMY_MEALS.map((meal) => {
-    return <li>{meal.name}</li>;
+    return <MealItem key={meal.id} meal={meal}></MealItem>;
   });
 
   return (
