@@ -3,7 +3,6 @@ import MealItemForm from '../MealItemForm/MealItemForm';
 import classes from './MealItem.module.css';
 
 const MealItem = ({ meal }) => {
-  console.log(meal);
   const price = `$${meal.price.toFixed(2)}`;
 
   return (
