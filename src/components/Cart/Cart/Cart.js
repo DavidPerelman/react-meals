@@ -3,7 +3,6 @@ import Modal from '../../UI/Modal/Modal';
 import classes from './Cart.module.css';
 
 const Cart = ({ onClose }) => {
-  console.log(onClose);
   const cartItems = (
     <ul className={classes['cart-items']}>
       {[{ id: 'c1', name: 'Sushi', amount: 2, price: 12.99 }].map((item) => (
