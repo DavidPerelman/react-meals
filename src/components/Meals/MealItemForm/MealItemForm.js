@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import Input from '../../UI/Input/Input';
 import classes from './MealItemForm.module.css';
 
-const MealItemForm = ({ id }) => {
+const MealItemForm = ({ id, onAddToCard }) => {
   const [amountIsValid, setAmountIsValid] = useState(true);
 
   const amountInputRef = useRef();
@@ -21,6 +21,8 @@ const MealItemForm = ({ id }) => {
       setAmountIsValid(false);
       return;
     }
+
+    onAddToCard(enteredAmountNumber);
   };
 
   return (
