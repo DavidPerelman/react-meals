@@ -18,6 +18,7 @@ const AvailableMeals = () => {
         throw new Error('Something went wrong!');
       }
       const responseData = await response.json();
+      console.log(responseData);
       setMeals(responseData);
       setIsLoading(false);
     };
