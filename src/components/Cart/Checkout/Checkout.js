@@ -4,7 +4,7 @@ import classes from './Checkout.module.css';
 const isEmpty = (value) => value.trim() === '';
 const isNotFiveChart = (value) => value.trim().length !== 5;
 
-const Checkout = ({ onCancel }) => {
+const Checkout = ({ onCancel, onConfirm }) => {
   const [formInputValidity, setFormInputValidity] = useState({
     name: true,
     street: true,
@@ -52,6 +52,12 @@ const Checkout = ({ onCancel }) => {
     }
 
     // Submit cart data
+    onConfirm({
+      name: enteredName,
+      street: enteredStreet,
+      postalCode: enteredPostalCode,
+      city: enteredCity,
+    });
   };
 
   const nameControlClasses = `${classes.control} ${
