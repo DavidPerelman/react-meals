@@ -4,6 +4,7 @@ import MealItem from '../MealItem/MealItem';
 import classes from './AvailableMeals.module.css';
 
 const AvailableMeals = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [meals, setMeals] = useState([]);
 
   useEffect(() => {
@@ -13,10 +14,19 @@ const AvailableMeals = () => {
       );
       const responseData = await response.json();
       setMeals(responseData);
+      setIsLoading(false);
     };
 
     fetchMeals();
   }, []);
+
+  if (isLoading) {
+    return (
+      <section className={classes.mealsLoading}>
+        <p>Loading...</p>
+      </section>
+    );
+  }
 
   const mealList = meals.map((meal) => {
     return <MealItem key={meal.id} meal={meal}></MealItem>;
